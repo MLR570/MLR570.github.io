@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notes · MLR 570 Advanced Machine Learning</title>
+<meta name="description" content="All chapters of the MLR 570 lecture notes, with the full table of contents.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%235a37d4'/><text y='.9em' x='50' text-anchor='middle' font-size='58' font-family='system-ui' font-weight='bold' fill='white'>M</text></svg>">
+<script>
+  (function () {
+    var t;
+    try { t = localStorage.getItem('mlr570-theme'); } catch (e) {}
+    if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.dataset.theme = t;
+  })();
+</script>
+<link rel="stylesheet" href="assets/css/base.css?v=3b4f3647">
+<link rel="stylesheet" href="assets/css/layout.css?v=3b4f3647">
+<link rel="stylesheet" href="assets/css/components.css?v=3b4f3647">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="brand" href="index.html">
+      <span class="brand__mark">570</span>
+      <span class="brand__text">MLR 570 <span>· Advanced ML</span></span>
+    </a>
+    <button class="icon-btn nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <div class="nav__links" id="nav-links">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link" href="notes.html" aria-current="page">Notes</a>
+      <a class="nav__link" href="syllabus.html">Syllabus</a>
+      <a class="nav__link" href="about.html">About</a>
+      <button class="icon-btn nav__theme" id="theme-toggle" aria-label="Switch theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+<div class="page">
+
+  <div class="chapter-head">
+    <div class="chapter-head__crumb"><a href="index.html">Home</a> › Notes</div>
+    <h1>Course notes</h1>
+    <p class="chapter-head__lede">
+      The MLR 570 lecture notes, chapter by chapter, with interactive examples throughout. Chapters open as
+      the course reaches them, so only Chapter 1 can be read right now.
+    </p>
+  </div>
+
+  <!-- ===== Chapter 1 ===== -->
+  <section>
+    <div class="section-head" style="margin-top:0">
+      <div class="section-head__label">Available now</div>
+      <h2>1 · Mathematical Background</h2>
+      <p>
+        Everything the rest of the course assumes you already know, gathered in one place, with the reason
+        each piece matters for machine learning attached to it.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <a class="card-link" href="chapters/01-mathematical-background.html#linear-algebra">
+        <div class="card-link__num">PART 1.1</div>
+        <h3 class="card-link__title">Linear Algebra</h3>
+        <p class="card-link__desc">
+          Vectors and matrices, multiplication, linear systems, transpose, inverse, rank, null space, matrix
+          families, norms, eigenvalues and SVD.
+        </p>
+        <div class="card-link__foot">
+          <span class="pill pill--play">13 playgrounds</span>
+        </div>
+      </a>
+      <a class="card-link" href="chapters/01-mathematical-background.html#probability">
+        <div class="card-link__num">PART 1.2</div>
+        <h3 class="card-link__title">Probability &amp; Statistics</h3>
+        <p class="card-link__desc">
+          Sample spaces, discrete and continuous random variables, moments, joint and conditional
+          distributions, Bayes' theorem, independence, sample statistics.
+        </p>
+        <div class="card-link__foot">
+          <span class="pill pill--play">4 playgrounds</span>
+        </div>
+      </a>
+      <a class="card-link" href="chapters/01-mathematical-background.html#calculus">
+        <div class="card-link__num">PART 1.3</div>
+        <h3 class="card-link__title">Calculus &amp; Optimization</h3>
+        <p class="card-link__desc">
+          Limits and derivatives, gradients, vector and matrix calculus, the chain rule, convexity and
+          gradient descent.
+        </p>
+        <div class="card-link__foot">
+          <span class="pill pill--play">4 playgrounds</span>
+        </div>
+      </a>
+      <a class="card-link" href="chapters/01-mathematical-background.html#further">
+        <div class="card-link__num">PART 1.4</div>
+        <h3 class="card-link__title">Further Topics</h3>
+        <p class="card-link__desc">
+          Inner products and orthonormal bases, positive definite matrices, quadratic forms, orthogonal
+          projections, LLN and CLT, and algorithmic complexity.
+        </p>
+        <div class="card-link__foot">
+          <span class="pill pill--play">5 playgrounds</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <div class="callout callout--note">
+    <div class="callout__title">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01" stroke-linecap="round"/></svg>
+      Everything below is still closed
+    </div>
+    <p style="margin-bottom:0">
+      Chapters 2 through 6 are listed so you can see how the course is laid out, but they are dimmed and
+      cannot be opened yet. Each one will be released here once we have covered it in class.
+    </p>
+  </div>
+
+  <!-- ===== Chapter 2 ===== -->
+  <section>
+    <div class="section-head">
+      <div class="section-head__label">Not yet released</div>
+      <h2>2 · Data Fundamentals</h2>
+      <p>
+        Everything that happens before you fit a model and everything that happens after: preparing data,
+        measuring similarity, and judging honestly whether the result works.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card-link card-link--locked" aria-hidden="true">
+        <div class="card-link__num">PART 2.1</div>
+        <h3 class="card-link__title">Data Preprocessing</h3>
+        <p class="card-link__desc">
+          Aggregation, sampling, normalization, encoding, discretization, PCA and feature selection.
+        </p>
+        <div class="card-link__foot">
+          <span class="pill pill--play">9 playgrounds</span>
+        </div>
+      </div>
+      <div class="card-link card-link--locked" aria-hidden="true">
+        <div class="card-link__num">PART 2.2</div>
+        <h3 class="card-link__title">Similarity Measures</h3>
+        <p class="card-link__desc">
+          Pearson correlation, Euclidean and Manhattan distance, the curse of dimensionality, cosine and
+          Jaccard similarity.
+        </p>
+        <div class="card-link__foot">
+          <span class="pill pill--play">5 playgrounds</span>
+        </div>
+      </div>
+      <div class="card-link card-link--locked" aria-hidden="true">
+        <div class="card-link__num">PART 2.3</div>
+        <h3 class="card-link__title">Model Evaluation</h3>
+        <p class="card-link__desc">
+          Data splits, over- and under-fitting, k-fold cross-validation, classification and regression
+          metrics, ROC and precision-recall curves.
+        </p>
+        <div class="card-link__foot">
+          <span class="pill pill--play">7 playgrounds</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Chapter 3 ===== -->
+  <section>
+    <div class="section-head">
+      <div class="section-head__label">Not yet released</div>
+      <h2>3 · Supervised Learning I</h2>
+      <p>
+        Linear models and the kernel methods that free them, from the perceptron through support vector
+        machines to kernel ridge regression and k-nearest neighbors.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card-link card-link--locked" aria-hidden="true">
+        <div class="card-link__num">PARTS 3.1-3.2</div>
+        <h3 class="card-link__title">Classification &amp; SVMs</h3>
+        <p class="card-link__desc">
+          Linear separability, the perceptron and its gradient-descent reading, maximum-margin
+          classification, the dual and KKT conditions, soft margins.
+        </p>
+        <div class="card-link__foot"><span class="pill pill--play">3 playgrounds</span></div>
+      </div>
+      <div class="card-link card-link--locked" aria-hidden="true">
+        <div class="card-link__num">PART 3.3</div>
+        <h3 class="card-link__title">Linear Regression</h3>
+        <p class="card-link__desc">
+          Ordinary and weighted least squares, ridge regression and multicollinearity, Lasso and elastic net.
+        </p>
+        <div class="card-link__foot"><span class="pill pill--play">2 playgrounds</span></div>
+      </div>
+      <div class="card-link card-link--locked" aria-hidden="true">
+        <div class="card-link__num">PARTS 3.4-3.5</div>
+        <h3 class="card-link__title">Kernels &amp; k-NN</h3>
+        <p class="card-link__desc">
+          Nonlinear feature maps, the kernel trick, polynomial and RBF kernels, kernel least squares, and
+          k-nearest neighbors.
+        </p>
+        <div class="card-link__foot"><span class="pill pill--play">5 playgrounds</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Chapter 4 ===== -->
+  <section>
+    <div class="section-head">
+      <div class="section-head__label">Not yet released</div>
+      <h2>4 · Trees &amp; Neural Networks</h2>
+      <p>
+        Two models with opposite personalities: trees that you can read aloud, and networks that learn their
+        own representation.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card-link card-link--locked" aria-hidden="true">
+        <div class="card-link__num">PART 4.1</div>
+        <h3 class="card-link__title">Decision Trees</h3>
+        <p class="card-link__desc">
+          ID3 and greedy construction, entropy and information gain, the Play Tennis worked example,
+          real-valued splits, Gini and Tsallis, overfitting and pruning.
+        </p>
+        <div class="card-link__foot"><span class="pill pill--play">5 playgrounds</span></div>
+      </div>
+      <div class="card-link card-link--locked" aria-hidden="true">
+        <div class="card-link__num">PART 4.2</div>
+        <h3 class="card-link__title">Feedforward Neural Networks</h3>
+        <p class="card-link__desc">
+          Architecture and the forward pass, output layers and losses, activation functions,
+          backpropagation derived step by step, optimizers, universal approximation, and a full
+          layer-by-layer XOR run-through.
+        </p>
+        <div class="card-link__foot"><span class="pill pill--play">7 playgrounds</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Chapter 5 ===== -->
+  <section>
+    <div class="section-head">
+      <div class="section-head__label">Not yet released</div>
+      <h2>5 · CNNs, RNNs &amp; Transformers</h2>
+      <p>
+        Three architectures, three different assumptions about which parts of the input belong together:
+        locality, recurrence, and learned attention.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card-link card-link--locked" aria-hidden="true">
+        <div class="card-link__num">PART 5.1</div>
+        <h3 class="card-link__title">Convolutional Networks</h3>
+        <p class="card-link__desc">
+          Images as numbers, the convolution operation and its arithmetic, padding modes, the feature
+          hierarchy, pooling, receptive fields, and LeNet through EfficientNet.
+        </p>
+        <div class="card-link__foot"><span class="pill pill--play">8 playgrounds</span></div>
+      </div>
+      <div class="card-link card-link--locked" aria-hidden="true">
+        <div class="card-link__num">PART 5.2</div>
+        <h3 class="card-link__title">Recurrent Networks</h3>
+        <p class="card-link__desc">
+          The vanilla RNN with a fully worked forward pass, backpropagation through time, vanishing and
+          exploding gradients, and the LSTM and GRU gating that fix them.
+        </p>
+        <div class="card-link__foot"><span class="pill pill--play">6 playgrounds</span></div>
+      </div>
+      <div class="card-link card-link--locked" aria-hidden="true">
+        <div class="card-link__num">PART 5.3</div>
+        <h3 class="card-link__title">Transformers</h3>
+        <p class="card-link__desc">
+          Tokens and embeddings, positional encoding, scaled dot-product attention and why the scaling is
+          there, multi-head attention, causal masking and the two pre-training objectives.
+        </p>
+        <div class="card-link__foot"><span class="pill pill--play">7 playgrounds</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Chapter 6 ===== -->
+  <section>
+    <div class="section-head">
+      <div class="section-head__label">Not yet released</div>
+      <h2>6 · Unsupervised Learning</h2>
+      <p>
+        No labels at all. Just data, and the question of what structure is worth finding in it.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card-link card-link--locked" aria-hidden="true">
+        <div class="card-link__num">PARTS 6.1-6.2</div>
+        <h3 class="card-link__title">Clustering as Optimization</h3>
+        <p class="card-link__desc">
+          The WCSS objective and the ANOVA identity, Lloyd's algorithm worked through step by step, where
+          k-means fails and why, k-means++ seeding, k-medoids and kernel k-means.
+        </p>
+        <div class="card-link__foot"><span class="pill pill--play">6 playgrounds</span></div>
+      </div>
+      <div class="card-link card-link--locked" aria-hidden="true">
+        <div class="card-link__num">PARTS 6.3-6.4</div>
+        <h3 class="card-link__title">Density &amp; Soft Clustering</h3>
+        <p class="card-link__desc">
+          DBSCAN, density-reachability, core/border/noise and the k-distance plot for choosing ε, then
+          Gaussian mixtures, EM, and the limit in which EM becomes k-means.
+        </p>
+        <div class="card-link__foot"><span class="pill pill--play">3 playgrounds</span></div>
+      </div>
+      <div class="card-link card-link--locked" aria-hidden="true">
+        <div class="card-link__num">PART 6.5</div>
+        <h3 class="card-link__title">Autoencoders</h3>
+        <p class="card-link__desc">
+          The bottleneck and reconstruction loss, the exact equivalence between linear autoencoders and PCA,
+          what nonlinearity buys, denoising and sparse variants, and VAEs.
+        </p>
+        <div class="card-link__foot"><span class="pill pill--play">4 playgrounds</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Coming ===== -->
+  <section>
+    <div class="section-head">
+      <div class="section-head__label">Also on the syllabus</div>
+      <h2>The rest of the course</h2>
+      <p>
+        Two topics on the schedule are taught from readings rather than from these lecture notes, so there is
+        no chapter for them here.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card" style="background:var(--bg-sunken);border-style:dashed">
+        <div class="card-link__num" style="color:var(--ink-faint)">ALSO ON THE SYLLABUS</div>
+        <h3 style="margin-top:0;font-size:1.09rem">Taught from readings</h3>
+        <ul style="font-size:.92rem;color:var(--ink-muted);margin-bottom:0">
+          <li>Semi-supervised learning (weeks 13 and 14)</li>
+          <li>Ensemble methods (week 15)</li>
+        </ul>
+        <p style="font-size:.87rem;color:var(--ink-faint);margin:.8rem 0 0">
+          These are on the <a href="syllabus.html#schedule">schedule</a> but are not part of the lecture-note
+          set, so no chapter is planned for them here.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div>
+      <h4>MLR 570</h4>
+      <p style="margin:0;font-size:.9rem">
+        Advanced Machine Learning<br>
+        Department of Computer Science &amp; Engineering<br>
+        American University of Sharjah
+      </p>
+    </div>
+    <div>
+      <h4>Notes</h4>
+      <ul>
+        <li><a href="chapters/01-mathematical-background.html">1 · Mathematical Background</a></li>
+        <li class="is-locked">2 · Data Fundamentals</li>
+        <li class="is-locked">3 · Supervised Learning I</li>
+        <li class="is-locked">4 · Trees & Neural Networks</li>
+        <li class="is-locked">5 · CNNs, RNNs & Transformers</li>
+        <li class="is-locked">6 · Unsupervised Learning</li>
+        <li><a href="notes.html">All chapters</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Course</h4>
+      <ul>
+        <li><a href="syllabus.html">Syllabus &amp; schedule</a></li>
+        <li><a href="about.html">About &amp; contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>Course notes by Dara Varam · Instructor Dr. Mohamed I. AlHajri</span>
+    <span>Built to be played with.</span>
+  </div>
+</footer>
+
+<script src="assets/js/site.js?v=3b4f3647"></script>
+</body>
+</html>
