@@ -17,13 +17,13 @@ so the repository carries the source for the released chapters and nothing else.
 | Chapter | State |
 |---|---|
 | 1 · Mathematical Background | Live, 26 interactive figures |
-| 2 · Data Fundamentals | Not released |
+| 2 · Data Fundamentals | Live, 21 interactive figures |
 | 3 · Supervised Learning I (linear & kernel) | Not released |
 | 4 · Trees & Neural Networks | Not released |
 | 5 · CNNs, RNNs & Transformers | Not released |
 | 6 · Unsupervised Learning | Not released |
 
-Chapters 2 through 6 are still listed on the landing page and the notes index, dimmed and not
+Chapters 3 through 6 are still listed on the landing page and the notes index, dimmed and not
 clickable, so students can see the shape of the course.
 
 ## Running it locally
@@ -49,6 +49,7 @@ syllabus.html           Course description, schedule, assessment
 about.html              People, method, errata policy
 chapters/
   01-mathematical-background.html
+  02-data-fundamentals.html
 assets/
   css/
     base.css            Design tokens, reset, typography
@@ -64,6 +65,9 @@ assets/
       la.js             Linear algebra figures
       prob.js           Probability and statistics figures
       calc.js           Calculus, optimization and complexity figures
+      prep.js           Data preprocessing figures
+      sim.js            Similarity measure figures
+      eval.js           Model evaluation figures
   img/
 ```
 

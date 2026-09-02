@@ -15,9 +15,9 @@
     document.documentElement.dataset.theme = t;
   })();
 </script>
-<link rel="stylesheet" href="assets/css/base.css?v=3b4f3647">
-<link rel="stylesheet" href="assets/css/layout.css?v=3b4f3647">
-<link rel="stylesheet" href="assets/css/components.css?v=3b4f3647">
+<link rel="stylesheet" href="assets/css/base.css?v=d0328c0b">
+<link rel="stylesheet" href="assets/css/layout.css?v=d0328c0b">
+<link rel="stylesheet" href="assets/css/components.css?v=d0328c0b">
 </head>
 <body>
 
@@ -52,7 +52,7 @@
     <h1>Course notes</h1>
     <p class="chapter-head__lede">
       The MLR 570 lecture notes, chapter by chapter, with interactive examples throughout. Chapters open as
-      the course reaches them, so only Chapter 1 can be read right now.
+      the course reaches them, so Chapters 1 and 2 can be read right now.
     </p>
   </div>
 
@@ -115,21 +115,10 @@
     </div>
   </section>
 
-  <div class="callout callout--note">
-    <div class="callout__title">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01" stroke-linecap="round"/></svg>
-      Everything below is still closed
-    </div>
-    <p style="margin-bottom:0">
-      Chapters 2 through 6 are listed so you can see how the course is laid out, but they are dimmed and
-      cannot be opened yet. Each one will be released here once we have covered it in class.
-    </p>
-  </div>
-
   <!-- ===== Chapter 2 ===== -->
   <section>
     <div class="section-head">
-      <div class="section-head__label">Not yet released</div>
+      <div class="section-head__label">Available now</div>
       <h2>2 · Data Fundamentals</h2>
       <p>
         Everything that happens before you fit a model and everything that happens after: preparing data,
@@ -138,7 +127,7 @@
     </div>
 
     <div class="grid-3">
-      <div class="card-link card-link--locked" aria-hidden="true">
+      <a class="card-link" href="chapters/02-data-fundamentals.html#preprocessing">
         <div class="card-link__num">PART 2.1</div>
         <h3 class="card-link__title">Data Preprocessing</h3>
         <p class="card-link__desc">
@@ -147,8 +136,8 @@
         <div class="card-link__foot">
           <span class="pill pill--play">9 playgrounds</span>
         </div>
-      </div>
-      <div class="card-link card-link--locked" aria-hidden="true">
+      </a>
+      <a class="card-link" href="chapters/02-data-fundamentals.html#similarity">
         <div class="card-link__num">PART 2.2</div>
         <h3 class="card-link__title">Similarity Measures</h3>
         <p class="card-link__desc">
@@ -158,8 +147,8 @@
         <div class="card-link__foot">
           <span class="pill pill--play">5 playgrounds</span>
         </div>
-      </div>
-      <div class="card-link card-link--locked" aria-hidden="true">
+      </a>
+      <a class="card-link" href="chapters/02-data-fundamentals.html#evaluation">
         <div class="card-link__num">PART 2.3</div>
         <h3 class="card-link__title">Model Evaluation</h3>
         <p class="card-link__desc">
@@ -169,9 +158,20 @@
         <div class="card-link__foot">
           <span class="pill pill--play">7 playgrounds</span>
         </div>
-      </div>
+      </a>
     </div>
   </section>
+
+  <div class="callout callout--note">
+    <div class="callout__title">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01" stroke-linecap="round"/></svg>
+      Everything below is still closed
+    </div>
+    <p style="margin-bottom:0">
+      Chapters 3 through 6 are listed so you can see how the course is laid out, but they are dimmed and
+      cannot be opened yet. Each one will be released here once we have covered it in class.
+    </p>
+  </div>
 
   <!-- ===== Chapter 3 ===== -->
   <section>
@@ -375,7 +375,7 @@
       <h4>Notes</h4>
       <ul>
         <li><a href="chapters/01-mathematical-background.html">1 · Mathematical Background</a></li>
-        <li class="is-locked">2 · Data Fundamentals</li>
+        <li><a href="chapters/02-data-fundamentals.html">2 · Data Fundamentals</a></li>
         <li class="is-locked">3 · Supervised Learning I</li>
         <li class="is-locked">4 · Trees & Neural Networks</li>
         <li class="is-locked">5 · CNNs, RNNs & Transformers</li>
@@ -397,6 +397,6 @@
   </div>
 </footer>
 
-<script src="assets/js/site.js?v=3b4f3647"></script>
+<script src="assets/js/site.js?v=d0328c0b"></script>
 </body>
 </html>

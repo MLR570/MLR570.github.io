@@ -6,6 +6,9 @@ import { rng, gauss } from '../ml.js';
 import './la.js';
 import './prob.js';
 import './calc.js';
+import './prep.js';
+import './sim.js';
+import './eval.js';
 
 /* ------------------------------------------------------------
    Landing-page hero: a feed-forward network, drawn in full, with
