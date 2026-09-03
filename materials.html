@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Previous Materials · MLR 570 Advanced Machine Learning</title>
+<meta name="description" content="Past MLR 570 projects and surveys, with links to the published papers.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%235a37d4'/><text y='.9em' x='50' text-anchor='middle' font-size='58' font-family='system-ui' font-weight='bold' fill='white'>M</text></svg>">
+<script>
+  (function () {
+    var t;
+    try { t = localStorage.getItem('mlr570-theme'); } catch (e) {}
+    if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.dataset.theme = t;
+  })();
+</script>
+<link rel="stylesheet" href="assets/css/base.css?v=d0328c0b">
+<link rel="stylesheet" href="assets/css/layout.css?v=d0328c0b">
+<link rel="stylesheet" href="assets/css/components.css?v=d0328c0b">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="brand" href="index.html">
+      <span class="brand__mark">570</span>
+      <span class="brand__text">MLR 570 <span>· Advanced ML</span></span>
+    </a>
+    <button class="icon-btn nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <div class="nav__links" id="nav-links">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link" href="notes.html">Notes</a>
+      <a class="nav__link" href="syllabus.html">Syllabus</a>
+      <a class="nav__link" href="materials.html" aria-current="page">Previous Materials</a>
+      <a class="nav__link" href="about.html">About</a>
+      <button class="icon-btn nav__theme" id="theme-toggle" aria-label="Switch theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+<div class="page">
+
+  <div class="chapter-head">
+    <div class="chapter-head__crumb"><a href="index.html">Home</a> › Previous Materials</div>
+    <h1>Previous materials</h1>
+    <p class="chapter-head__lede">
+      Work that has come out of this course and the group around it. The survey report and the final
+      project are two separate assignments, and there are published examples of both here.
+    </p>
+  </div>
+
+  <!-- ===== Projects ===== -->
+  <section id="projects">
+    <div class="section-head" style="margin-top:0">
+      <div class="section-head__label">Past projects</div>
+      <h2>Final projects</h2>
+      <p>
+        The final project is done in teams of three and is due in week 15. Both of these started as
+        student work and ended up published.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <a class="card-link" href="https://ieeexplore.ieee.org/abstract/document/11141391/" target="_blank" rel="noopener">
+        <div class="card-link__num">PROJECT</div>
+        <h3 class="card-link__title">Class Separation Dynamics in Vision Transformers: An Empirical Study</h3>
+        <p class="card-link__desc">
+          Dara Varam, Lujain Khalil, Mahmoud Darwish and Mohamed I. AlHajri. Tracks how far apart a vision
+          transformer holds its classes at every layer, and finds that the separation spikes at the first
+          transformer block and then decays exponentially with depth.
+        </p>
+        <div class="card-link__foot">
+          <span class="pill pill--brand">IEEE Access</span>
+          <span>· vol. 13, 2025, pp. 153651-153670</span>
+        </div>
+      </a>
+
+      <a class="card-link" href="https://link.springer.com/article/10.1007/s10032-026-00596-4" target="_blank" rel="noopener">
+        <div class="card-link__num">PROJECT</div>
+        <h3 class="card-link__title">Different Strokes for Different Folks: Writer Identification for Historical Arabic Manuscripts</h3>
+        <p class="card-link__desc">
+          Hamza A. Abushahla, Ariel Justine N. Panopio, Layth Al-Khairulla and Mohamed I. AlHajri.
+          Identifies the scribe behind a historical Arabic manuscript from the handwriting itself.
+        </p>
+        <div class="card-link__foot">
+          <span class="pill pill--brand">IJDAR</span>
+          <span>· 2026</span>
+        </div>
+      </a>
+    </div>
+
+    <p style="font-size:.88rem;color:var(--ink-faint);margin-top:.9rem">
+      Code for the vision transformer study is on
+      <a href="https://github.com/DaraVaram/vit-data-separation" target="_blank" rel="noopener">GitHub</a>.
+    </p>
+  </section>
+
+  <!-- ===== Surveys ===== -->
+  <section id="surveys">
+    <div class="section-head">
+      <div class="section-head__label">Past surveys</div>
+      <h2>Survey reports</h2>
+      <p>
+        The survey report is a separate, individual assignment, due in week 10. You pick a topic area and
+        write a detailed survey of it from a literature review. Both assignments are described on the
+        <a href="syllabus.html#assignments">syllabus</a>.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <a class="card-link" href="https://arxiv.org/abs/2508.15008" target="_blank" rel="noopener">
+        <div class="card-link__num">SURVEY</div>
+        <h3 class="card-link__title">Neural Network Quantization for Microcontrollers: A Comprehensive Survey of Methods, Platforms, and Applications</h3>
+        <p class="card-link__desc">
+          Hamza A. Abushahla, Dara Varam, Ariel Justine N. Panopio and Mohamed I. AlHajri. Covers the
+          quantization methods used to fit neural networks onto microcontrollers, the hardware and software
+          platforms that run them, and where the accuracy goes.
+        </p>
+        <div class="card-link__foot">
+          <span class="pill pill--brand">arXiv</span>
+          <span>· 2508.15008, 2025</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <div class="callout callout--note">
+    <div class="callout__title">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01" stroke-linecap="round"/></svg>
+      More to come
+    </div>
+    <p style="margin-bottom:0">
+      Past exams and other course material will be added here as they are cleared for release.
+    </p>
+  </div>
+
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div>
+      <h4>MLR 570</h4>
+      <p style="margin:0;font-size:.9rem">
+        Advanced Machine Learning<br>
+        Department of Computer Science &amp; Engineering<br>
+        American University of Sharjah
+      </p>
+    </div>
+    <div>
+      <h4>Notes</h4>
+      <ul>
+        <li><a href="chapters/01-mathematical-background.html">1 · Mathematical Background</a></li>
+        <li><a href="chapters/02-data-fundamentals.html">2 · Data Fundamentals</a></li>
+        <li class="is-locked">3 · Supervised Learning I</li>
+        <li class="is-locked">4 · Trees &amp; Neural Networks</li>
+        <li class="is-locked">5 · CNNs, RNNs &amp; Transformers</li>
+        <li class="is-locked">6 · Unsupervised Learning</li>
+        <li><a href="notes.html">All chapters</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Course</h4>
+      <ul>
+        <li><a href="syllabus.html">Syllabus &amp; schedule</a></li>
+        <li><a href="materials.html">Previous materials</a></li>
+        <li><a href="about.html">About &amp; contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>Course notes by Dara Varam · Instructor Dr. Mohamed I. AlHajri</span>
+    <span>Built to be played with.</span>
+  </div>
+</footer>
+
+<script src="assets/js/site.js?v=d0328c0b"></script>
+</body>
+</html>
