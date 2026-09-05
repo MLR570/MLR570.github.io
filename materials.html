@@ -15,9 +15,9 @@
     document.documentElement.dataset.theme = t;
   })();
 </script>
-<link rel="stylesheet" href="assets/css/base.css?v=d0328c0b">
-<link rel="stylesheet" href="assets/css/layout.css?v=d0328c0b">
-<link rel="stylesheet" href="assets/css/components.css?v=d0328c0b">
+<link rel="stylesheet" href="assets/css/base.css?v=463637ec">
+<link rel="stylesheet" href="assets/css/layout.css?v=463637ec">
+<link rel="stylesheet" href="assets/css/components.css?v=463637ec">
 </head>
 <body>
 
@@ -101,6 +101,71 @@
       Code for the vision transformer study is on
       <a href="https://github.com/DaraVaram/vit-data-separation" target="_blank" rel="noopener">GitHub</a>.
     </p>
+
+    <h3 id="other-projects">Other project topics</h3>
+    <p>
+      These are other topics teams have taken on, kept here so you can see the range of a question that
+      works at this scale. Open a row to read its abstract.
+    </p>
+
+    <div class="table-scroll">
+      <table class="projtable">
+        <thead>
+          <tr><th>Project title</th><th>Abstract</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="projtable__title">On the Relationship Between Sharp Minima and Memorization in Federated Learning</td>
+            <td>
+              <details class="abstract">
+                <summary><span class="abstract__more">Read abstract</span><span class="abstract__less">Hide abstract</span></summary>
+                <p>Sharpness-Aware Minimization (SAM) has emerged as an effective optimization strategy for improving generalization in deep learning by seeking flat minima. Recent work has shown that in centralized training, SAM achieves its performance gains by memorizing atypical yet informative sub-patterns in the data, which simultaneously leads to higher vulnerability to membership inference attacks (MIA). In federated learning (FL), the SAM variant FedSAM has been shown to outperform FedAvg under non-IID data distributions, yet its memorization behavior and associated privacy risks remain unexplored. In this work, we empirically investigate whether FedSAM exhibits higher memorization than FedAvg. Using CIFAR-10 under varying degrees of client data heterogeneity, we estimate memorization and influence scores for both algorithms and analyze their relationship with test accuracy and influence entropy. Contrary to centralized findings, our initial results indicate that while FedSAM does outperform FedAvg, FedSAM does not necessarily memorize more compared to FedAvg.</p>
+              </details>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="projtable__title">Optimizing Neural Networks for Apple's Neural Engine: A NAS Framework</td>
+            <td>
+              <details class="abstract">
+                <summary><span class="abstract__more">Read abstract</span><span class="abstract__less">Hide abstract</span></summary>
+                <p>The increase in using mobile devices to run complex AI models makes optimizing these models for resource-constrained environments, such as the Apple Neural Engine (ANE), very important. To optimize deep learning models for efficient deployment on iPhones and other iOS devices, we present a new framework combining Hardware-Aware Neural Architecture Search (NAS), training free precursor methods, quantization, pruning, and knowledge distillation (KD). Our approach designs models based on ANE-specific constraints, such as the memory layout and precision requirements of ANE, resulting in models that are both smaller in size and faster than currently available models, resulting in a significant performance boost in running applications on the iPhone and other iOS devices. Using three widely-used model architectures (ResNet50, ViT-Small, and Inception-v3) we assessed the performance of our models after optimizing them. The results are promising as we saw very little deprication in accuracy and decreases in size when comparing the optimized versions of these models with their base architectures. For example, the ResNet50 achieved 67.29% accuracy with a model size of 18.8MB, down from 96MB; whereas, the ViT-Small model maintained approximately 80.44% accuracy while reducing its size from 87MB down to 24.6MB. In addition, the Inception-v3's model size decreased from 89.1MB into 25.6MB. The technique for mixed precision quantization appears to provide a compelling balance of size and accuracy with respect to all three architectures reviewed.</p>
+              </details>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="projtable__title">Modeling Illicit Financial Behavior with Graph Neural Networks: A Criminology-Driven Approach For Anti-Money Laundering</td>
+            <td>
+              <details class="abstract">
+                <summary><span class="abstract__more">Read abstract</span><span class="abstract__less">Hide abstract</span></summary>
+                <p>Anti-money laundering (AML) detection remains a critical challenge due to extreme class imbalance, evolving criminal behavior, and the inability of rule-based systems to capture relational and temporal dependencies in financial transactions. Graph neural networks (GNNs) offer a natural way to model these dependencies, yet most AML research treats illicit behavior as a purely data-driven phenomenon, overlooking established criminological theory. This work introduces a criminology-informed framework for AML detection by operationalizing Routine Activity Theory (RAT) into quantitative, motif-aware graph features that describe offender behavior, temporal opportunity, guardianship gaps, and laundering-related structural patterns. Using the IBM HI-Small synthetic transaction dataset, we construct four controlled variants (baseline, RAT-low, RAT-medium, and RAT-high), reflecting increasing proportions of illicit transactions that exhibit RAT-consistent behavior. We evaluate three architectures: GraphSAGE, a static message-passing GNN; GraphSAGE-T, which augments edge classification with temporal encoding; and DyRep-Lite, a lightweight continuous-time event model. Experiments across multiple seeds show that RAT-aware features substantially improve detection performance, yielding gains of 30-45% in AUPR and consistent improvements in F1, MCC, and Top-K precision. GraphSAGE-T achieves the strongest overall classification performance, while DyRep-Lite exhibits the best early-detection behavior under Top-K evaluation. Ablation studies further reveal the importance of temporal features, structural motifs, and RAT-derived behavioral indicators. These results demonstrate that integrating criminological theory with temporal graph learning yields more robust, interpretable, and effective AML detection models.</p>
+              </details>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="projtable__title">Multi-Dialect Audio Deepfake Detection on the Arabic Language</td>
+            <td>
+              <details class="abstract">
+                <summary><span class="abstract__more">Read abstract</span><span class="abstract__less">Hide abstract</span></summary>
+                <p>Synthetic audio generation technology has improved exponentially in the past few decades, leading to a rise in AI-based human voice cloning, commonly referred to as Audio Deepfakes (AD), and its misuse. Having reached a point where humans cannot reliably tell apart deepfake audios from bona fide (real) ones, Audio Deepfake Detection (ADD) has become an emerging topic of active research. Current literature shows experiments being done to find optimal feature extraction, machine learning and deep learning techniques to solve this classification task, to great effect. However, there is a gap that is evident in present literature, the majority of ADD work is done on English, and other languages go underrepresented. Many benchmark datasets used for AD and ADD are primarily composed of only English or a few other languages, leaving a question mark on the performance of ADD systems on underrepresented languages, and in turn, placing speakers of these languages at risk. As an effort to instigate solutions to these issues, in this paper, we introduce a new dataset for Arabic ADD, higher in quality than existing corpus (measured in Mean Opinion Score) and rich in terms of dialect representation. We then provide baseline results for this dataset followed by experiments that explore the importance of dialect representation. The results show that model performance drops when fewer dialects are available for training. However, they are able to generalize to unseen dialects, a behavior that improves proportionally to the amount of data available, depending on the model used.</p>
+              </details>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="projtable__title">Systematic Prompt Engineering for Verilog Code Generation: Integrating Curriculum Learning and Chain-of-Thought Reasoning in Large Language Models</td>
+            <td>
+              <details class="abstract">
+                <summary><span class="abstract__more">Read abstract</span><span class="abstract__less">Hide abstract</span></summary>
+                <p>Large Language Models (LLMs) have demonstrated significant potential in code generation tasks, yet their application to Hardware Description Languages (HDLs) like Verilog remains challenging due to limited training data and the fundamental differences between software and hardware paradigms. This paper presents a systematic approach to improving Verilog code generation through structured prompt engineering, combining three complementary techniques: structure-aware prompting to enforce syntactic correctness, curriculum-based prompting to provide targeted domain knowledge, and chain-of-thought (CoT) reasoning to guide multi-step problem decomposition. We evaluate our approach on the VerilogEval V2 benchmark consisting of 156 problems spanning 17 functional categories. Our best configuration achieves 64.74% pass@1 and 73.08% pass@5, representing a 12.82% improvement in pass@1 over the baseline while reducing compilation errors by 55.6%. We develop a 13-lesson curriculum covering fundamental Verilog concepts and demonstrate that selective lesson retrieval combined with post-curriculum reasoning yields optimal performance. Our analysis reveals that improper curriculum application can degrade performance through concept interference, highlighting the importance of precise prompt engineering. This work contributes validated prompting strategies, a reusable curriculum corpus, and insights into the challenges of applying LLMs to hardware design tasks.</p>
+              </details>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <!-- ===== Surveys ===== -->
@@ -182,6 +247,6 @@
   </div>
 </footer>
 
-<script src="assets/js/site.js?v=d0328c0b"></script>
+<script src="assets/js/site.js?v=463637ec"></script>
 </body>
 </html>
