@@ -797,3 +797,59 @@ pre:hover .code-copy, .code-copy:focus-visible { opacity: 1; }
 }
 
 .footer li.is-locked { color: var(--ink-faint); opacity: .5; }
+
+/* --- Past project table -----------------------------------------
+   A scannable list of previous final projects. Each abstract sits
+   behind a <details> so five long paragraphs do not swamp the page,
+   and the rows stack into cards once the two columns get cramped.
+   ------------------------------------------------------------- */
+.projtable { table-layout: fixed; }
+.projtable th:first-child,
+.projtable td:first-child { width: 34%; }
+.projtable td { vertical-align: top; }
+.projtable__title { font-weight: 620; line-height: 1.45; }
+
+.abstract > summary {
+  display: inline-flex; align-items: center; gap: .45em;
+  list-style: none; cursor: pointer;
+  font-size: .84rem; font-weight: 620;
+  color: var(--brand);
+  padding: .2em .55em .2em .45em;
+  border-radius: var(--r-sm);
+  transition: color .15s ease, background .15s ease;
+}
+.abstract > summary::-webkit-details-marker { display: none; }
+.abstract > summary::before {
+  content: ""; flex: none;
+  width: 0; height: 0;
+  border-left: 5px solid currentColor;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: transform .15s ease;
+}
+.abstract[open] > summary::before { transform: rotate(90deg); }
+.abstract > summary:hover { color: var(--brand-hover); background: var(--brand-soft); }
+.abstract > summary:focus-visible { outline: 2px solid var(--brand-ring); outline-offset: 2px; }
+.abstract[open] > summary { margin-bottom: .45rem; }
+
+.abstract__less { display: none; }
+.abstract[open] .abstract__more { display: none; }
+.abstract[open] .abstract__less { display: inline; }
+
+.abstract > p {
+  margin: 0 0 .2rem;
+  max-width: 68ch;
+  font-size: .89rem; line-height: 1.62;
+  color: var(--ink-muted);
+}
+
+@media (max-width: 700px) {
+  .projtable thead { display: none; }
+  .projtable, .projtable tbody, .projtable tr, .projtable td { display: block; width: auto; }
+  .projtable th:first-child,
+  .projtable td:first-child { width: auto; }
+  .projtable tr { padding: .9rem 0; border-bottom: 1px solid var(--rule); }
+  .projtable tr:last-child { border-bottom: none; }
+  .projtable td { padding: 0; border-bottom: none; }
+  .projtable__title { margin-bottom: .45rem; }
+}
