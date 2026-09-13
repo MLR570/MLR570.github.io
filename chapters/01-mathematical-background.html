@@ -1933,39 +1933,44 @@ energy = np.cumsum(s**2) / np.sum(s**2)</code></pre>
       </p>
       <ul style="margin-bottom:.6em">
         <li>
-          <strong>Denominator layout</strong> (also called gradient layout): \(\partial y / \partial \mathbf{x}\)
-          has the <em>same shape as \(\mathbf{x}\)</em>. For scalar \(y\) and column vector \(\mathbf{x}\),
-          the result is a column vector.
+          <strong>Numerator layout</strong> (Jacobian layout): \(\partial y / \partial \mathbf{x}\) follows the
+          shape of the <em>numerator</em>. For scalar \(y\) and column vector \(\mathbf{x} \in \mathbb{R}^n\),
+          the result is a \(1 \times n\) row vector, and a derivative with respect to an \(m \times n\) matrix
+          is \(n \times m\).
         </li>
         <li>
-          <strong>Numerator layout</strong> (Jacobian layout): the result follows the shape of the
-          <em>numerator</em>, so the same derivative comes out as a row vector, the transpose of the one
+          <strong>Denominator layout</strong> (gradient layout): the result has the <em>same shape as
+          \(\mathbf{x}\)</em>, so the same derivative comes out as a column vector, the transpose of the one
           above.
         </li>
       </ul>
       <p style="margin-bottom:0">
-        <strong>These notes use denominator layout throughout</strong>, so \(\nabla f\) always has the same
-        shape as the thing you are differentiating with respect to. Deep learning frameworks use the same
-        convention. It is what lets you write
-        \(\mathbf{w} \leftarrow \mathbf{w} - \eta \nabla f\) with no transpose.
+        <strong>These notes use numerator layout throughout.</strong> The derivative of
+        \(\mathbf{f} \in \mathbb{R}^m\) with respect to \(\mathbf{x} \in \mathbb{R}^n\) is then the
+        \(m \times n\) Jacobian, and the chain rule multiplies factors in the same order as the scalar rule.
+        The gradient stays a column vector, defined as the transpose
+        \(\nabla f(\mathbf{x}) = \left(\partial f / \partial \mathbf{x}\right)^T\), so the update
+        \(\mathbf{w} \leftarrow \mathbf{w} - \eta \nabla f\) subtracts something with the same shape as
+        \(\mathbf{w}\).
       </p>
     </div>
 
-    <p><strong>Scalar function of a vector.</strong> For \(f: \mathbb{R}^n \to \mathbb{R}\), the gradient is the column vector of partials:</p>
+    <p><strong>Scalar function of a vector.</strong> For \(f: \mathbb{R}^n \to \mathbb{R}\), the derivative is the row vector of partials:</p>
     \[
-    \nabla f(\mathbf{x}) = \frac{\partial f}{\partial \mathbf{x}} =
-    \begin{bmatrix} \frac{\partial f}{\partial x_1} \\ \vdots \\ \frac{\partial f}{\partial x_n} \end{bmatrix}.
+    \frac{\partial f}{\partial \mathbf{x}} =
+    \begin{bmatrix} \frac{\partial f}{\partial x_1} & \cdots & \frac{\partial f}{\partial x_n} \end{bmatrix}
+    = \left(\nabla f(\mathbf{x})\right)^T.
     \]
     <p>Two that come up constantly:</p>
     \[
-    f(\mathbf{x}) = \mathbf{a}^T\mathbf{x} \;\Rightarrow\; \frac{\partial f}{\partial \mathbf{x}} = \mathbf{a},
+    f(\mathbf{x}) = \mathbf{a}^T\mathbf{x} \;\Rightarrow\; \frac{\partial f}{\partial \mathbf{x}} = \mathbf{a}^T,
     \qquad
-    f(\mathbf{x}) = \mathbf{x}^T\mathbf{x} \;\Rightarrow\; \frac{\partial f}{\partial \mathbf{x}} = 2\mathbf{x}.
+    f(\mathbf{x}) = \mathbf{x}^T\mathbf{x} \;\Rightarrow\; \frac{\partial f}{\partial \mathbf{x}} = 2\mathbf{x}^T.
     \]
 
-    <p><strong>Scalar function of a matrix.</strong> For \(f: \mathbb{R}^{m \times n} \to \mathbb{R}\), the derivative is an \(m \times n\) matrix with</p>
-    \[ \left[\frac{\partial f}{\partial \mathbf{X}}\right]_{ij} = \frac{\partial f}{\partial \mathbf{X}_{ij}}. \]
-    <p>For instance, \(f(\mathbf{X}) = \operatorname{tr}(\mathbf{A}^T\mathbf{X}) \Rightarrow \frac{\partial f}{\partial \mathbf{X}} = \mathbf{A}\).</p>
+    <p><strong>Scalar function of a matrix.</strong> For \(f: \mathbb{R}^{m \times n} \to \mathbb{R}\), the derivative is an \(n \times m\) matrix, the transpose of the shape of \(\mathbf{X}\), with</p>
+    \[ \left[\frac{\partial f}{\partial \mathbf{X}}\right]_{ij} = \frac{\partial f}{\partial \mathbf{X}_{ji}}. \]
+    <p>The gradient \(\nabla_\mathbf{X} f = \left(\partial f / \partial \mathbf{X}\right)^T\) has the same shape as \(\mathbf{X}\), and it is what a gradient step on a weight matrix subtracts. For instance, \(f(\mathbf{X}) = \operatorname{tr}(\mathbf{A}^T\mathbf{X}) \Rightarrow \frac{\partial f}{\partial \mathbf{X}} = \mathbf{A}^T\) and \(\nabla_\mathbf{X} f = \mathbf{A}\).</p>
 
     <div class="callout callout--note">
       <div class="callout__title">
@@ -1982,7 +1987,7 @@ energy = np.cumsum(s**2) / np.sum(s**2)</code></pre>
       </p>
     </div>
 
-    <p><strong>Vector function of a vector (the Jacobian).</strong> For \(\mathbf{f}: \mathbb{R}^n \to \mathbb{R}^m\):</p>
+    <p><strong>Vector function of a vector (the Jacobian).</strong> For \(\mathbf{f}: \mathbb{R}^n \to \mathbb{R}^m\), the derivative is the \(m \times n\) Jacobian, with one row per output and one column per input:</p>
     \[
     J_{\mathbf{f}}(\mathbf{x}) = \frac{\partial \mathbf{f}}{\partial \mathbf{x}} =
     \begin{bmatrix}
@@ -1994,7 +1999,7 @@ energy = np.cumsum(s**2) / np.sum(s**2)</code></pre>
     <p>For \(\mathbf{f}(x,y) = \begin{bmatrix} x+y \\ x^2 y \end{bmatrix}\):</p>
     \[ J_{\mathbf{f}}(x,y) = \begin{bmatrix} 1 & 1 \\ 2xy & x^2 \end{bmatrix}. \]
 
-    <p><strong>Second derivatives (the Hessian).</strong> For \(f: \mathbb{R}^n \to \mathbb{R}\):</p>
+    <p><strong>Second derivatives (the Hessian).</strong> For \(f: \mathbb{R}^n \to \mathbb{R}\), the Hessian is the Jacobian of the gradient, \(H_f(\mathbf{x}) = \frac{\partial}{\partial \mathbf{x}} \nabla f(\mathbf{x})\):</p>
     \[
     H_f(\mathbf{x}) = \frac{\partial^2 f}{\partial \mathbf{x}^2} =
     \begin{bmatrix}
@@ -2019,8 +2024,9 @@ energy = np.cumsum(s**2) / np.sum(s**2)</code></pre>
     <p>Writing it in differential form makes it easier to see:</p>
     \[ dz = \frac{df}{dy}\, dy, \qquad dy = \frac{dg}{dx}\, dx
        \;\Longrightarrow\; dz = \frac{df}{dy}\cdot\frac{dg}{dx}\, dx, \]
-    <p>and dividing through by \(dx\) recovers the rule. For the multivariable case with \(\mathbf{u} = g(\mathbf{x})\), the Jacobian takes over:</p>
-    \[ \nabla_\mathbf{x} f(g(\mathbf{x})) = J_g(\mathbf{x})^T\, \nabla f(g(\mathbf{x})). \]
+    <p>and dividing through by \(dx\) recovers the rule. For the multivariable case with \(\mathbf{u} = g(\mathbf{x})\), \(\mathbf{x} \in \mathbb{R}^n\) and \(\mathbf{u} \in \mathbb{R}^m\), the Jacobian takes over, and the factors keep the same order:</p>
+    \[ \frac{\partial f(g(\mathbf{x}))}{\partial \mathbf{x}} = \frac{\partial f}{\partial \mathbf{u}}\,\frac{\partial \mathbf{u}}{\partial \mathbf{x}} = \frac{\partial f}{\partial \mathbf{u}}\, J_g(\mathbf{x}). \]
+    <p>A \(1 \times m\) row times an \(m \times n\) matrix gives a \(1 \times n\) row. Transposing both sides gives the column-gradient form \(\nabla_\mathbf{x} f(g(\mathbf{x})) = J_g(\mathbf{x})^T\, \nabla f(g(\mathbf{x}))\).</p>
 
     <div class="playground">
       <div class="playground__head">
@@ -2048,13 +2054,14 @@ energy = np.cumsum(s**2) / np.sum(s**2)</code></pre>
     <!-- ---------- Matrix calculus ---------- -->
     <h3 id="matrix-calculus">Matrix calculus identities</h3>
 
-    <p>Four identities do most of the work in practice:</p>
+    <p>Four identities do most of the work in practice, written in numerator layout:</p>
     <ol>
-      <li>\(f(\mathbf{x}) = \mathbf{a}^T\mathbf{x} \;\Rightarrow\; \nabla_\mathbf{x} f = \mathbf{a}\).</li>
-      <li>\(f(\mathbf{x}) = \mathbf{x}^T\mathbf{A}\mathbf{x}\) with \(\mathbf{A}\) symmetric \(\Rightarrow \nabla_\mathbf{x} f = 2\mathbf{A}\mathbf{x}\).</li>
-      <li>\(f(\mathbf{x}) = \|\mathbf{x}\|^2 = \mathbf{x}^T\mathbf{x} \;\Rightarrow\; \nabla_\mathbf{x} f = 2\mathbf{x}\).</li>
-      <li>\(f(\mathbf{X}) = \operatorname{tr}(\mathbf{A}\mathbf{X}) \;\Rightarrow\; \nabla_\mathbf{X} f = \mathbf{A}^T\).</li>
+      <li>\(f(\mathbf{x}) = \mathbf{a}^T\mathbf{x} \;\Rightarrow\; \frac{\partial f}{\partial \mathbf{x}} = \mathbf{a}^T\).</li>
+      <li>\(f(\mathbf{x}) = \mathbf{x}^T\mathbf{A}\mathbf{x}\) with \(\mathbf{A}\) symmetric \(\Rightarrow \frac{\partial f}{\partial \mathbf{x}} = 2\mathbf{x}^T\mathbf{A}\).</li>
+      <li>\(f(\mathbf{x}) = \|\mathbf{x}\|^2 = \mathbf{x}^T\mathbf{x} \;\Rightarrow\; \frac{\partial f}{\partial \mathbf{x}} = 2\mathbf{x}^T\).</li>
+      <li>\(f(\mathbf{X}) = \operatorname{tr}(\mathbf{A}\mathbf{X}) \;\Rightarrow\; \frac{\partial f}{\partial \mathbf{X}} = \mathbf{A}\).</li>
     </ol>
+    <p>The gradients are the transposes: \(\nabla_\mathbf{x} f = \mathbf{a}\), \(\nabla_\mathbf{x} f = 2\mathbf{A}\mathbf{x}\), \(\nabla_\mathbf{x} f = 2\mathbf{x}\) and \(\nabla_\mathbf{X} f = \mathbf{A}^T\).</p>
 
     <div class="example">
       <div class="example__head">
@@ -2064,7 +2071,7 @@ energy = np.cumsum(s**2) / np.sum(s**2)</code></pre>
       <div class="example__body">
         <p><strong>1 · Linear form.</strong> Let \(f(\mathbf{x}) = \mathbf{a}^T\mathbf{x}\) with \(\mathbf{a} \in \mathbb{R}^n\) constant.</p>
         \[ f(\mathbf{x}) = \sum_{i=1}^n a_i x_i \;\Rightarrow\; \frac{\partial f}{\partial x_i} = a_i
-           \;\Rightarrow\; \nabla_\mathbf{x} f = \mathbf{a}. \]
+           \;\Rightarrow\; \frac{\partial f}{\partial \mathbf{x}} = \begin{bmatrix} a_1 & \cdots & a_n \end{bmatrix} = \mathbf{a}^T. \]
 
         <p><strong>2 · Quadratic form.</strong> Let \(f(\mathbf{x}) = \mathbf{x}^T\mathbf{A}\mathbf{x}\) with \(\mathbf{A} \in \mathbb{R}^{n \times n}\) symmetric.</p>
         \[ f(\mathbf{x}) = \sum_{i=1}^n\sum_{j=1}^n x_i A_{ij} x_j \]
@@ -2072,25 +2079,26 @@ energy = np.cumsum(s**2) / np.sum(s**2)</code></pre>
         \[ \frac{\partial f}{\partial x_k} = \sum_{j=1}^n A_{kj}x_j + \sum_{i=1}^n x_i A_{ik}
            = [\mathbf{A}\mathbf{x}]_k + [\mathbf{A}^T\mathbf{x}]_k. \]
         <p>Since \(\mathbf{A} = \mathbf{A}^T\), the two terms coincide:</p>
-        \[ \frac{\partial f}{\partial x_k} = 2[\mathbf{A}\mathbf{x}]_k \;\Rightarrow\; \nabla_\mathbf{x} f = 2\mathbf{A}\mathbf{x}. \]
+        \[ \frac{\partial f}{\partial x_k} = 2[\mathbf{A}\mathbf{x}]_k \;\Rightarrow\; \frac{\partial f}{\partial \mathbf{x}} = 2(\mathbf{A}\mathbf{x})^T = 2\mathbf{x}^T\mathbf{A}, \]
+        <p>using \((\mathbf{A}\mathbf{x})^T = \mathbf{x}^T\mathbf{A}^T = \mathbf{x}^T\mathbf{A}\).</p>
         <p style="font-size:.93rem;color:var(--ink-muted)">
-          Without symmetry the general result is \(\nabla_\mathbf{x} f = (\mathbf{A} + \mathbf{A}^T)\mathbf{x}\).
+          Without symmetry the general result is \(\frac{\partial f}{\partial \mathbf{x}} = \mathbf{x}^T(\mathbf{A} + \mathbf{A}^T)\).
         </p>
 
         <p><strong>3 · Squared norm.</strong> Let \(f(\mathbf{x}) = \|\mathbf{x}\|^2 = \mathbf{x}^T\mathbf{x}\).</p>
         \[ f(\mathbf{x}) = \sum_{i=1}^n x_i^2 \;\Rightarrow\; \frac{\partial f}{\partial x_i} = 2x_i
-           \;\Rightarrow\; \nabla_\mathbf{x} f = 2\mathbf{x}. \]
+           \;\Rightarrow\; \frac{\partial f}{\partial \mathbf{x}} = 2\mathbf{x}^T. \]
         <p>This is just identity 2 with \(\mathbf{A} = \mathbf{I}\).</p>
 
         <p><strong>4 · Trace.</strong> Let \(f(\mathbf{X}) = \operatorname{tr}(\mathbf{A}\mathbf{X})\). For the product to be square we need \(\mathbf{A} \in \mathbb{R}^{m \times n}\) and \(\mathbf{X} \in \mathbb{R}^{n \times m}\). Expanding the trace:</p>
         \[ \operatorname{tr}(\mathbf{A}\mathbf{X}) = \sum_{i=1}^m [\mathbf{A}\mathbf{X}]_{ii}
            = \sum_{i=1}^m \sum_{j=1}^n A_{ij} X_{ji}. \]
-        <p>The entry \(X_{kl}\) appears exactly once, multiplied by \(A_{lk}\), so</p>
-        \[ \frac{\partial f}{\partial X_{kl}} = A_{lk} \;\Rightarrow\; \nabla_\mathbf{X} f = \mathbf{A}^T. \]
+        <p>The entry \(X_{ji}\) appears exactly once, multiplied by \(A_{ij}\). In numerator layout the \((i,j)\) entry of the derivative is \(\partial f / \partial X_{ji}\), so the result is \(m \times n\) and</p>
+        \[ \left[\frac{\partial f}{\partial \mathbf{X}}\right]_{ij} = \frac{\partial f}{\partial X_{ji}} = A_{ij} \;\Rightarrow\; \frac{\partial f}{\partial \mathbf{X}} = \mathbf{A}, \qquad \nabla_\mathbf{X} f = \mathbf{A}^T. \]
         <p style="margin-bottom:1em;font-size:.93rem;color:var(--ink-muted)">
           Watch the index order. It is \(A_{ij}X_{ji}\), not \(A_{ij}X_{ij}\). That second sum is the
           Frobenius inner product \(\langle\mathbf{A},\mathbf{X}\rangle_F = \operatorname{tr}(\mathbf{A}^T\mathbf{X})\),
-          and its derivative is \(\mathbf{A}\), not \(\mathbf{A}^T\). The two identities differ by one
+          and its derivative is \(\mathbf{A}^T\), not \(\mathbf{A}\). The two identities differ by one
           transpose, and that is where most of the mistakes come from.
         </p>
       </div>
@@ -2098,8 +2106,10 @@ energy = np.cumsum(s**2) / np.sum(s**2)</code></pre>
 
     <p>
       <strong>Example (identity 1).</strong> For a linear model \(f(\mathbf{x}) = \mathbf{w}^T\mathbf{x} + b\)
-      with scalar bias \(b\), the gradient with respect to the input is \(\nabla_\mathbf{x} f = \mathbf{w}\),
-      and with respect to the weights it is \(\nabla_\mathbf{w} f = \mathbf{x}\).
+      with scalar bias \(b\), the derivative with respect to the input is
+      \(\frac{\partial f}{\partial \mathbf{x}} = \mathbf{w}^T\), and with respect to the weights it is
+      \(\frac{\partial f}{\partial \mathbf{w}} = \mathbf{x}^T\). The gradient used in the weight update is
+      the transpose, \(\nabla_\mathbf{w} f = \mathbf{x}\).
     </p>
     <p>
       For more, see the <em>Matrix Cookbook</em> in the <a href="#reading">further reading</a> section.
