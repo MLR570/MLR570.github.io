@@ -15,9 +15,9 @@
     document.documentElement.dataset.theme = t;
   })();
 </script>
-<link rel="stylesheet" href="assets/css/base.css?v=13fa4cb7">
-<link rel="stylesheet" href="assets/css/layout.css?v=13fa4cb7">
-<link rel="stylesheet" href="assets/css/components.css?v=13fa4cb7">
+<link rel="stylesheet" href="assets/css/base.css?v=0a0b103b">
+<link rel="stylesheet" href="assets/css/layout.css?v=0a0b103b">
+<link rel="stylesheet" href="assets/css/components.css?v=0a0b103b">
 </head>
 <body>
 
@@ -53,7 +53,7 @@
     <h1>Course notes</h1>
     <p class="chapter-head__lede">
       The MLR 570 lecture notes, chapter by chapter, with interactive examples throughout. Chapters open as
-      the course reaches them, so Chapters 1 to 3 can be read right now.
+      the course reaches them, so Chapters 1 to 4 can be read right now.
     </p>
   </div>
 
@@ -204,21 +204,10 @@
     </div>
   </section>
 
-  <div class="callout callout--note">
-    <div class="callout__title">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01" stroke-linecap="round"/></svg>
-      Everything below is still closed
-    </div>
-    <p style="margin-bottom:0">
-      Chapters 4 through 6 are listed so you can see how the course is laid out, but they are dimmed and
-      cannot be opened yet. Each one will be released here once we have covered it in class.
-    </p>
-  </div>
-
   <!-- ===== Chapter 4 ===== -->
   <section>
     <div class="section-head">
-      <div class="section-head__label">Not yet released</div>
+      <div class="section-head__label">Available now</div>
       <h2>4 · Trees &amp; Neural Networks</h2>
       <p>
         Two models with opposite personalities: trees that you can read aloud, and networks that learn their
@@ -227,7 +216,7 @@
     </div>
 
     <div class="grid-2">
-      <div class="card-link card-link--locked" aria-hidden="true">
+      <a class="card-link" href="chapters/04-trees-neural-networks.html#dt-intro">
         <div class="card-link__num">PART 4.1</div>
         <h3 class="card-link__title">Decision Trees</h3>
         <p class="card-link__desc">
@@ -235,8 +224,8 @@
           real-valued splits, Gini and Tsallis, overfitting and pruning.
         </p>
         <div class="card-link__foot"><span class="pill pill--play">5 playgrounds</span></div>
-      </div>
-      <div class="card-link card-link--locked" aria-hidden="true">
+      </a>
+      <a class="card-link" href="chapters/04-trees-neural-networks.html#fnn-intro">
         <div class="card-link__num">PART 4.2</div>
         <h3 class="card-link__title">Feedforward Neural Networks</h3>
         <p class="card-link__desc">
@@ -245,9 +234,20 @@
           layer-by-layer XOR run-through.
         </p>
         <div class="card-link__foot"><span class="pill pill--play">7 playgrounds</span></div>
-      </div>
+      </a>
     </div>
   </section>
+
+  <div class="callout callout--note">
+    <div class="callout__title">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01" stroke-linecap="round"/></svg>
+      Everything below is still closed
+    </div>
+    <p style="margin-bottom:0">
+      Chapters 5 and 6 are listed so you can see how the course is laid out, but they are dimmed and
+      cannot be opened yet. Each one will be released here once we have covered it in class.
+    </p>
+  </div>
 
   <!-- ===== Chapter 5 ===== -->
   <section>
@@ -378,7 +378,7 @@
         <li><a href="chapters/01-mathematical-background.html">1 · Mathematical Background</a></li>
         <li><a href="chapters/02-data-fundamentals.html">2 · Data Fundamentals</a></li>
         <li><a href="chapters/03-supervised-linear-kernel.html">3 · Supervised Learning I</a></li>
-        <li class="is-locked">4 · Trees & Neural Networks</li>
+        <li><a href="chapters/04-trees-neural-networks.html">4 · Trees & Neural Networks</a></li>
         <li class="is-locked">5 · CNNs, RNNs & Transformers</li>
         <li class="is-locked">6 · Unsupervised Learning</li>
         <li><a href="notes.html">All chapters</a></li>
@@ -399,6 +399,6 @@
   </div>
 </footer>
 
-<script src="assets/js/site.js?v=13fa4cb7"></script>
+<script src="assets/js/site.js?v=0a0b103b"></script>
 </body>
 </html>
